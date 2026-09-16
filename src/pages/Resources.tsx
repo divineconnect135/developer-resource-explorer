@@ -52,7 +52,7 @@ const Resources = () => {
         <select
           value={category}
           onChange={(e) => setCategory(e.target.value)}
-          className="rounded-lg border border-slate-700 bg-slate-900 pl-4 appearance-none py-3 mt-2"
+          className="w-full rounded-lg border border-slate-700 bg-slate-900 pl-4 appearance-none py-3 mt-2"
         >
           {categories.map((category) => (
             <option key={category} value={category}>
@@ -64,14 +64,34 @@ const Resources = () => {
         <select
           value={sortBy}
           onChange={(e) => setSortBy(e.target.value as "name" | "rating")}
-          className="rounded-lg border border-slate-700 bg-slate-900 px-4 appearance-none py-3 ml-2 mt-2"
+          className="w-full rounded-lg border border-slate-700 bg-slate-900 px-4 appearance-none py-3  mt-2"
         >
           <option value="name">Name A-Z</option>
           <option value="rating">Highest Rating</option>
         </select>
 
         <div className="mt-10">
-          <ResourceGrid resources={sortedResources} />
+          {sortedResources.length > 0 ? (
+            <ResourceGrid resources={sortedResources} />
+          ) : (
+            <div className="rounded-xl border border-slate-800 bg-slate-900 p-8 text-center">
+              <h2 className="text-xl font-semibold text-white">
+                No Resources Found
+              </h2>
+              <p className="mt-2 text-slate-400">
+                Try Changing Your Search or Category Filter.
+              </p>
+              <button
+                onClick={() => {
+                  setSearch("");
+                  setCategory("All");
+                }}
+                className="mt-5 rounded-lg bg-sky-500 px-4 py-2 font-medium text-white hover:bg-sky-400"
+              >
+                Clear Filters
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </main>
