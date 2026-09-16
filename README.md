@@ -48,25 +48,28 @@ This project helped me practice:
 
 ## Project Structure
 
-```text
+https://github.com/divineconnect135/developer-resource-explorer
 src/
 ├── components/
-│   ├── Navbar.tsx
-│   ├── ResourceCard.tsx
-│   └── ResourceGrid.tsx
+│ ├── Navbar.tsx
+│ ├── ResourceCard.tsx
+│ └── ResourceGrid.tsx
 ├── context/
-│   ├── FavoritesContext.ts
-│   └── FavoritesProvider.tsx
+│ ├── FavoritesContext.ts
+│ └── FavoritesProvider.tsx
 ├── data/
-│   └── resources.ts
+│ └── resources.ts
 ├── pages/
-│   ├── Home.tsx
-│   ├── Resources.tsx
-│   ├── ResourceDetails.tsx
-│   ├── Favorites.tsx
-│   └── NotFound.tsx
+│ ├── Home.tsx
+│ ├── Resources.tsx
+│ ├── ResourceDetails.tsx
+│ ├── Favorites.tsx
+│ └── NotFound.tsx
 ├── types/
-│   └── Resource.ts
+│ └── Resource.ts
 ├── App.tsx
 └── main.tsx
+
+```
+
 ```
